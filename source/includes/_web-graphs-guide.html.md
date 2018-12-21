@@ -68,7 +68,7 @@ In this example the reward will always be 1 during an iteration as the BRAIN is 
 
 > ![Cartpole Debug](../images/graph-cartpole-debug.png)
 
-When your graph isn’t looking quite right, or if your reward isn’t building in the way you’d expect, the Simulator Graph can be a great way to troubleshoot what might be going on in your BRAIN. Graphing your reward against an action schema for example can tell you what is happening every iteration of your simulation.
+When your graph isn’t looking quite right, or if your reward isn’t building in the way you’d expect, the Simulator Graph can be a great way to troubleshoot what might be going on in your BRAIN. Graphing your reward against an action type for example can tell you what is happening every iteration of your simulation.
 
 Another way to troubleshoot your BRAIN is to check out the logs down below the code editor window. This can be found below the graphs and is typically used for text output of what’s going on in the simulation. For example, with Cartpole, every single episode’s reward is output to the logs and shown in the code panel here. Since the graph on the Performance tab only displays an average. For simulations with very long episode time lengths this can be a good way to make sure things are working correctly in the beginning, before the first test episode is shown on the graph.
 
@@ -96,7 +96,7 @@ Automatic termination will take a significant amount of time and it is recommend
 </aside>
 
 
-[1]: http://docs.bons.ai/references/inkling-reference.html#concepts
+[1]: http://docs.bons.ai/references/inkling2-reference.html#concepts
 [2]: https://www.youtube.com/watch?v=0R3PnJEisqk&list=PLAktfMEMCsOY9HUZKIuGI6yqefGBuszAV&index=4
 [3]: http://docs.bons.ai/examples.html#openai-gym-cartpole
 [4]: http://docs.bons.ai/guides/getting-started.html

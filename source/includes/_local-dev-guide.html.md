@@ -186,7 +186,7 @@ And we have these other resources that will enable you to maximize your AI devel
 [6]: ../tutorials/tutorial1.html
 [7]: ./web-graphs-guide.html
 [8]: https://www.youtube.com/watch?v=0R3PnJEisqk&list=PLAktfMEMCsOY9HUZKIuGI6yqefGBuszAV&index=4
-[9]: ./inkling-guide.html
+[9]: ./inkling2-guide.html
 [16]: ../images/graph-mountaincar-training.png
 [17]: ../references/cli-reference.html#bonsai-configure
 [18]: ../references/cli-reference.html#bonsai-create
