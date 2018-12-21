@@ -1,6 +1,6 @@
 # Curriculum and Lessons
 
-A **curriculum** in Inkling is used to define how to teach a concept. Each concept declaration must contain a curriculum. A curriculum also specifies the data source (the simulator) used to train the concept.
+A **curriculum** in Inkling defines how to teach a concept. Each concept declaration must contain a curriculum. A curriculum also specifies the data source (the simulator) used to train the concept.
 
 A **lesson** is part of a curriculum. It teaches a specific piece of the concept by specifying training parameters and a stopping point (**threshold**). Lessons enable the AI to learn the concept in stages instead of all at once. Lessons are contained within curriculum statements. If no lessons are specified within a curriculum, a default lesson is assumed.
 
@@ -48,31 +48,16 @@ If we are teaching the AI Pac-Man and we are training the concept of `avoid-non-
 
 ###### Defining Rewards
 
-There are several factors you can use to determine what your reward should be. A good reward function should reward the AI more often and be proportional to the quality of of the behavior.
+There are several factors you can use to determine what your reward should be. A good reward function should reward the AI more often and be proportional to the quality of the behavior.
 
 ### Sparsity of Rewards
 
-The frequency of feedback affects the speed of training. Ideally, the time between the AI's decision making and the reward for the behavior should be short. For example, if you're teaching an AI to play Pac-Man, you want to choose a reward like `score` instead of a reward like `beat level`. In Pac-Man, your score changes often, typically many times during a level, but your level can change only 256 times, and only after many many actions. Your AI would need to beat an entire level to be rewarded, which is difficult to do without getting intermediate feedback about which actions along the way were beneficial.
+The frequency of feedback affects the speed of training. Ideally, the time between the AI's decision making and the reward for the behavior should be short. For example, if you're teaching an AI to play Pac-Man, you want to choose a reward like `score` instead of a reward like `beat level`. In Pac-Man, your score changes often, typically many times during a level, but your level can change only 256 times, and only after many actions. Your AI would need to beat an entire level to be rewarded, which is difficult to do without getting intermediate feedback about which actions along the way were beneficial.
 
 ### Proportional Feedback
 
 The reward should be in proportion to the quality or correctness of the behavior. When you are implementing your reward function, you need to consider that the AI will learn exactly what you ask it to learn. This can result in learning what you specified but not necessarily what you wanted. For example, if you ask an AI to play Pong (controlling both agents), and your reward function is based on `game time`, the AI may learn that to get the longest time played, the paddle should remain in the same place. The ball will bounce back and forth between the two unmoving paddles. The AI learned exactly what you told it to learn -- how to maximize the amount of time, but it didn't learn how to play the game.
 
-### In Inkling
-
-In an Inkling program, your reward function is specified as part of your curriculum statement.
-
-```inkling2
-concept MyConcept {
-  curriculum {
-    source MySimulator
-
-    reward function (State: InputState): number {
-      return State.GameScore
-    }
-  }
-}
-```
 
 [1]: ./../references/inkling2-reference.html#curriculums
 [2]: ./../references/inkling2-reference.html#lessons

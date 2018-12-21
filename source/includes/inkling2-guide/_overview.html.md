@@ -2,7 +2,7 @@
 
 > ![Brain and Simulator][3]
 
-Welcome to Inkling, Bonsai AI's special-purpose programming language for training AI.
+Welcome to Inkling, Bonsai's special-purpose programming language for training AI.
 
 Inkling is a declarative, strongly-typed programming language specifically designed for artificial intelligence. It abstracts away the vast world of dynamic AI algorithms that require expertise in machine learning and enables more developers to program AI. An Inkling file contains the concepts -- what you want to teach the AI -- and the curriculum, -- how you want to teach the concepts -- necessary to train your BRAIN. Before you read through this section about the Inkling language, you should familiarize yourself with the various components of the Bonsai AI Engine, which you can read about in our [Getting Started Guide][1].
 
@@ -14,9 +14,7 @@ If you're interesting in finding out more about what's going on under the hood o
 
 Inkling is a special-purpose language for writing AI programs. The language has a blend of declarative and functional styles. We like to describe Inkling as the world's first machine teaching language.  
 
-<aside class="notice">
 The current verison of Inkling replaces an earlier version. The syntax and terminology of the earlier version of Inkling is documented in the [Inkling v1 Guide][5]
-</aside>
 
 ### What is Machine Teaching?
 
@@ -32,7 +30,7 @@ Machine teaching focuses on how the problem can be taught, not how it can be cal
 
 Imagine teaching children to play baseball. You can't just explain the whole game to them and expect them to understand how to play. You'd break down learning into pieces and create a series of lessons that would help them learn how to play baseball.
 
-Let's say, to start, you wanted to teach them the concept of hand-eye coordination. A sequence of lessons would capture this. You might start with a whiffle ball on a tee, progress to a tee that pops the ball up, move to underhand pitches, and then overhand pitches. You could continue to build upon your hand-eye coordination concept with things like curved pitches, different styles of catching, and other exercises. All of these **progressive lessons** help teach one concept - hand-eye coordination.
+Let's say, to start, you wanted to teach them the concept of hand-eye coordination. A sequence of lessons would capture this. You might start with a whiffle ball on a tee, progress to a tee that pops the ball up, move to underhand pitches, and then overhand pitches. You could continue to build upon your hand-eye coordination concept with things like curved pitches, different styles of catching, and other exercises. These **progressive lessons** help teach one concept - hand-eye coordination.
 
 ### Inkling is a Special-Purpose Language
 
@@ -57,4 +55,4 @@ Inkling is insensitive to white space. Internally, we prefer to use four spaces 
 [2]: ./ai-engine-guide.html
 [3]: ../../images/data-flow-simple.png
 [4]: https://en.wikipedia.org/wiki/Functional_programming
-[5]: ../guides/inkling-guide.html#overview
+[5]: ../../guides/inkling-guide.html#overview

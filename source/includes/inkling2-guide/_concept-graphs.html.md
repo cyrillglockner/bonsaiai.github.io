@@ -58,19 +58,19 @@ To learn the `get_high_score` concept more quickly, an additional concept can be
 
 ```inkling2
 graph (input: GameState) {
-  concept ball_location(input): Coordinates {
+  concept BallLocation(input): Coordinates {
     # Curriculum omitted
   }
 
-  concept keep_paddle_under_ball(input, ball_location): PlayerMove {
+  concept KeepPaddleUnderBall(input, BallLocation): PlayerMove {
     # Curriculum omitted
   }
 
-  concept get_high_score(input, keep_paddle_under_ball): PlayerMove {
+  concept GetHighScore(input, KeepPaddleUnderBall): PlayerMove {
     # Curriculum omitted
   }
 
-  output get_high_score
+  output GetHighScore
 }
 ```
 

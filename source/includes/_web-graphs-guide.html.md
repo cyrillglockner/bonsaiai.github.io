@@ -77,7 +77,7 @@ Another way to troubleshoot your BRAIN is to check out the logs down below the c
 
 > ![Cartpole Finished](../images/cartpole-end-training.png)
 
-So you’ve looked around at the different graphs and what the data has to offer, and now you might be wondering “Ok, so when do I hit the stop training button?” The answer to this question varies widely depending on the simulation. You have to know what a sufficient reward looks like for your problem you’re solving.
+You’ve looked around at the different graphs and what the data has to offer, and now you might be wondering “Ok, so when do I hit the stop training button?” The answer to this question varies widely depending on the simulation. You have to know what a sufficient reward looks like for your problem you’re solving.
 
 In the case of Cartpole what we’re looking for is the length of time between test episodes, because this is indicative of how long the AI is able to balance the pole before crashing and terminating that episode. The AI gets pretty good at playing the game after just a few minutes, where it can often reach around 1000 reward. If keeping the pole balanced for longer than that is necessary, then you would continue training and refining the model until you are satisfied with the BRAIN’s performance at the given task.
 

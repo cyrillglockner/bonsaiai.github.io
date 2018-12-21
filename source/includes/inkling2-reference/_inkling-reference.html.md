@@ -14,10 +14,6 @@ algorithms that require expertise in machine learning. Inkling allows you to
 focus at a conceptual level on what you want the machine to learn. That is why this model of
 programming is called machine teaching.
 
-<aside class="notice">
-EMACS USERS: There is an inkling-mode for local development found on <a href="https://github.com/BonsaiAI/inkling-mode">Bonsai's GitHub</a>
-</aside>
-
 An Inkling file contains the [concepts][1] (what and how you want to teach the AI), a set of
 [types][2] (which describe the data) necessary to train your BRAIN.
 Training your BRAIN will also require a [simulator][3]. Python simulators are

@@ -16,9 +16,6 @@ This guide uses the Bonsai Command Line Interface (CLI) to walk you through how 
 
 The reference document for all of the commands you will see in this guide can be found in the [CLI Reference][3].
 
-<aside class="notice">
-EMACS USERS: There is an inkling-mode for local development found on <a href="https://github.com/BonsaiAI/inkling-mode">Bonsai's GitHub</a>
-</aside>
 
 # Setup Your Project
 

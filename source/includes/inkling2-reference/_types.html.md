@@ -143,7 +143,7 @@ A type can be associated with an identifier using a type declaration statement. 
     <fieldName> ':' typeReference
 ```
 
-###### Type Equivalence and Castability
+## Type Equivalence
 
 Inkling uses types to understand and interpret the format of data. The Inkling compiler performs type checks to guarantee type compatibility. In some cases, type equivalence is required (i.e. the types must match exactly). In other cases, castability is required (i.e. one type can be trivially transformed into another type).
 

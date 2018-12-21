@@ -14,9 +14,7 @@ If you're interesting in finding out more about what's going on under the hood o
 
 Inkling is a special purpose language for writing AI programs. The language has a blend of declarative and functional styles; it's modeled after ideas in SQL and python. We like to describe Inkling as the world's first machine teaching language.  
 
-<aside class="notice">
 This verison of Inkling has been replaced by a newer version. The syntax and terminology of the newer version of Inkling is documented in the [Inkling v2 Guide][5]
-</aside>
 
 ### What is Machine Teaching?
 
@@ -57,4 +55,4 @@ Inkling is white space insensitive. Internally, we prefer to use four spaces to 
 [2]: ./ai-engine-guide.html
 [3]: ../../images/data-flow-simple.png
 [4]: https://en.wikipedia.org/wiki/Functional_programming
-[5]: ../guides/inkling2-guide.html#overview
+[5]: ../../guides/inkling2-guide.html#overview

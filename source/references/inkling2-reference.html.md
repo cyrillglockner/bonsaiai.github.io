@@ -5,7 +5,7 @@ toc_footers:
   -  <%= partial "partials/footer-links" %>  
 
 includes:
-- inkling2-reference/inkling2-reference.html.md
+- inkling2-reference/inkling-reference.html.md
 - inkling2-reference/lexical.html.md
 - inkling2-reference/types.html.md
 - inkling2-reference/constants.html.md

@@ -80,14 +80,6 @@ Integer literals are a string of digits with an optional sign and no decimal poi
 
 Floating-point literal values use decimal points and optional exponents.
 
-* **Struct literals**
-
-```inkling2--code
-    { X: 2, Y: 3, Name: "Bob" }
-```
-
-Struct literals are surrounded by curly brackets and contain a comma-separated list of field name/value pairs separated by a colon. The value can be specified as an expression and can even be another struct literal.
-
 * **Array literals**
 
 ```inkling2--code
@@ -95,6 +87,14 @@ Struct literals are surrounded by curly brackets and contain a comma-separated l
 ```
 
 Array literals are surrounded by square brackets and contain a comma-separated list of values. Each value can be specified as an expression. All elements within an array literal must be the same type. Empty (zero-length) array literals are not supported.
+
+* **Structure literals**
+
+```inkling2--code
+    { X: 2, Y: 3, Name: "Bob" }
+```
+
+Struct literals are surrounded by curly brackets and contain a comma-separated list of field name/value pairs separated by a colon. The value can be specified as an expression and can even be another struct literal.
 
 ## Comments
 
