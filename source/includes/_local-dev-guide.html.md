@@ -41,7 +41,7 @@ If you wish to experiment with your own project at this stage you can. Your proj
 > Python 2 and Anaconda
 
 ```
-d bonsai-sdk/samples/openai-gym/gym-mountaincar-samplec
+cd bonsai-sdk/samples/openai-gym/gym-mountaincar-sample
 pip install -r requirements.txt
 ```
 > Python 3
@@ -50,7 +50,7 @@ pip install -r requirements.txt
 # same as above
 ```
 ```shell
-d bonsai-sdk/samples/openai-gym/gym-mountaincar-sample
+cd bonsai-sdk/samples/openai-gym/gym-mountaincar-sample
 pip3 install -r requirements.txt
 ```
 
