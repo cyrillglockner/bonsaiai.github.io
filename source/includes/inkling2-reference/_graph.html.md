@@ -1,6 +1,6 @@
 # Graph
 
-The `graph` keyword declares the concept graph. Only one graph declaration is allowed per Inkling program. It defines the input type and output type. It also contains the list of declared concepts and designates which concept provides the output for the graph.
+The `graph` keyword declares the concept graph. Only one graph declaration is allowed per Inkling program. It defines the input type and output type of the BRAIN. It also contains the list of declared concepts and designates which concept provides the output for the graph.
 
 ```inkling2--code
 graph (input: InputType): OutputType {
@@ -17,7 +17,7 @@ graphStatement :=
 graph '(' input ':' inputType ')' [':' outputType]? '{'
   conceptDeclaration*
 
-  output [<conceptName> | input]
+  output <conceptName>
 '}'
 
 inputType ::= typeReference

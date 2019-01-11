@@ -82,7 +82,7 @@ simulator cartpole_simulator(action: Action, config: CartPoleConfig): GameState 
 }
 ```
 
-Simulator `cartpole_simulator` receives inputs of two types. The first, `Action`, specifies the action that the AI will take in the simulation. The second, `CartPoleConfig`, specifies the configuration of the simulation. The simulator outputs a value of type `GameState` which contains the state of the simulator at the end of an episode.
+Simulator `cartpole_simulator` receives inputs of two types. The first, `Action`, specifies the action that the AI will take in the simulation. The second, `CartPoleConfig`, specifies the configuration of the simulation. The simulator outputs a value of type `GameState` which contains the state of the simulator at each iteration.
 
 ## Simulator File
 

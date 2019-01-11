@@ -1,6 +1,6 @@
 # Concepts
 
-The `concept` keyword declares an abstract concept that is to be learned by the system. It can be a feature (such as a curvy line in an image) or a goal (such as high score in a game). Ultimately, a concept takes the form of a data transform. By declaring a concept, you are instructing the AI Engine that this is a node in the concept graph that must be learned.
+The `concept` keyword declares an abstract concept that is to be learned by the system. It can be a feature (such as a curvy line in an image) or a goal (such as high score in a game). Ultimately, a concept represents a function from input to output. By declaring a concept, you are instructing the AI Engine that this is a node in the concept graph that must be learned.
 
 ```inkling2--code
 concept AbstractConceptName(Antecedent1, Antecedent2): OutputType {
@@ -14,7 +14,7 @@ Because concepts are learned, their declarations tend to be fairly simple. The t
 
 ```inkling2--syntax
 conceptDeclaration :=
-concept <conceptName> '(' inputList ')' ':' outputType '{'
+concept <conceptName> '(' inputItemList ')' ':' outputType '{'
   curriculumClause
 '}'
 
@@ -51,11 +51,9 @@ is the original input to the concept graph.
 
 Input types do not need to be specified because their types are provided in the graph statement (in the case of `input`) or via the concept type (in the case of other concepts). 
 
-### Examples
+### Example
 
-We show Inkling for the concepts GetHighScore, Digit, Curvature, and Segments.
-
-**GetHighScore**
+We show Inkling for the concept GetHighScore.
 
 ```inkling2--code
 concept GetHighScore(input): PlayerMove {
@@ -67,43 +65,4 @@ concept GetHighScore(input): PlayerMove {
 * `inputItemList`: `input`
 * `outputType`: PlayerMove
 
-
-**Digit**
-
-```inkling2--code
-concept Digit(Curvature, Segments, input): MNISTOutput {
-  # Curriculum omitted
-}
-```
-
-* `conceptName`: Digit
-* `inputItemList`: Curvature, Segments, `input`
-* `outputType`: MNISTOutput
-
-**Curvature**
-
-```inkling2--code
-concept Curvature(input): CurveOutput {
-  # Curriculum omitted
-}
-```
-
-* `conceptName`: Curvature
-* `inputItemList`: `input`
-* `outputType`: CurveOutput
-
-Note that Digit specifies Curvature in its `inputItemList`. That means the
-output of the Curvature concept is an input to the Digit concept.
-
-**Segments**
-
-```inkling2--code
-concept Segments(input): SegmentsOutput {
-  # Curriculum omitted
-}
-```
-
-* `conceptName`: Segments
-* `inputItemList`: `input`
-* `outputType`: SegmentsOutput
 

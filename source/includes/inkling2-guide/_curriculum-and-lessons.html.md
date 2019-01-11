@@ -2,7 +2,7 @@
 
 A **curriculum** in Inkling defines how to teach a concept. Each concept declaration must contain a curriculum. A curriculum also specifies the data source (the simulator) used to train the concept.
 
-A **lesson** is part of a curriculum. It teaches a specific piece of the concept by specifying training parameters and a stopping point (**threshold**). Lessons enable the AI to learn the concept in stages instead of all at once. Lessons are contained within curriculum statements. If no lessons are specified within a curriculum, a default lesson is assumed.
+A **lesson** is part of a curriculum. It teaches a specific piece of the concept by specifying training parameters. Lessons enable the AI to learn the concept in stages instead of all at once. Lessons are contained within curriculum statements. If no lessons are specified within a curriculum, a default lesson is assumed.
 
 Each lesson provides an optional simulator configuration. If multiple lessons are specified, they should progress in difficulty with simple configurations followed by increasingly-difficult configurations.
 
@@ -34,7 +34,7 @@ For more information and examples, refer to the [Curriculum Reference][1].
 
 Each lesson may specify a **constraint** for the simulator's configuration. Earlier lessons must provide more restrictive constraints, while later lessons loosen the constraints. This allows the AI training to learn a simpler form of the concept before learning a more complex form.
 
-The **constrain** keyword must be followed by a type that constrains the simulator's declared configuration type. For more information and examples, refer to the [Lesson Reference][1].
+The **constraint** keyword must be followed by a type that constrains the simulator's declared configuration type. For more information and examples, refer to the [Lesson Reference][2].
 
 ## Reward
 

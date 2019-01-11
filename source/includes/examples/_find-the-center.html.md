@@ -26,7 +26,7 @@ type PlayerMove {
 }
 ```
 
-The `PlayerMove` type has one field, `delta`, with type three possible values: -1, 0, and 1.
+The `PlayerMove` type has one field, `delta`, with three possible values: -1, 0, and 1.
 
 ###### Concept Graph
 

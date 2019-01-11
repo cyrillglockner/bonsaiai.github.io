@@ -1,9 +1,10 @@
 # Types
 
 Inkling is a statically-typed language, which means that each variable, constant, and parameter has a well-defined type. The type system in Inkling supports the following basic types:
+
 * Number - numeric values (integer or floating point)
-* String - an array of zero or more unicode characters
-* Array - a non-zero-length array of same-typed values
+* String (future) - an array of zero or more unicode characters
+* Array (future) - a non-zero-length array of same-typed values
 * Structure - a collection of typed fields with unique names
 * Complex - built-in object types for specialized uses (like images)
 
@@ -16,9 +17,9 @@ Inkling is a statically-typed language, which means that each variable, constant
   { A: number, B: string }
 ```
 
-Types may be specified as simple type literals. Number and string literals simply use the keywords `number` and `string`.
+Types may be specified as simple type literals. Number and string literals simply use the keywords `number` and `string`. (Note: Strings are not yet implemented.)
 
-Array literals use square brackets surrounding a positive integer that represents the size of the array. Arrays may be nested.
+Array literals use square brackets surrounding a positive integer that represents the size of the array. Arrays may be nested. (Note: Arrays are not yet implemented.)
 
 Structure literals are denoted with curly braces surrounding a comma-separated list of one or more field definitions. Each field definition consists of a field name and a type separated by a colon.
 
@@ -86,6 +87,7 @@ As with numbers, a `string` type can be constrained using an enumerated constrai
 ```
 
 ```inkling2--code
+  # Default order of parameters is <width, height>
   Image.Gray<100, 200>
   Image.Gray<Height=200, Width=100>
 ```

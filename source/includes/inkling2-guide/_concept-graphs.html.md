@@ -40,21 +40,21 @@ graph (input: GameState) {
 }
 ```
 
-This program defines a single-concept graph. The name of the concept is get_high_score, and its input is the same as the input to the graph. It outputs a data type called PayerMove. (More on types and type declarations below.)
+This program defines a single-concept graph. The name of the concept is get_high_score, and its input is the same as the input to the graph. It outputs a data type called PlayerMove. (More on types and type declarations below.)
 
 The output statement indicates that the get_high_score concept is the output for the entire graph.
 
 ![][1]
 
-Single concept model for learning Breakout
+Single concept graph for learning Breakout
 
 The `input` is a snapshot of the game in its current state.
 
-The concept `get_high_score`, is the output `concept`. It describes what we want the BRAIN to learn (in this case, to get a high score in the simulated Breakout game). This single-concept graph is sufficient to train a BRAIN to play the game, but this training may take a long time.
+The concept `get_high_score`, is the output `concept`. It describes what we want the BRAIN to learn (in this case, to get a high score in the simulated Breakout game). This single-concept graph is sufficient to train a BRAIN to play the game, but training may take a long time.
 
-The `output` type PlayerMove describes the move that the AI wants to make. It chooses from left, right, or no move. The definition of the GameState and PlayerMove types are now shown.
+The `output` type PlayerMove describes the move that the AI wants to make. It chooses from left, right, or no move. The definition of the GameState and PlayerMove types are not shown.
 
-To learn the `get_high_score` concept more quickly, an additional concept can be added to the concept graph.
+To learn the `get_high_score` concept more quickly, additional concepts can be added to the concept graph.
 
 ```inkling2
 graph (input: GameState) {

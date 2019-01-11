@@ -30,7 +30,7 @@ Let's imagine that we want to save energy by turning off the lights in empty roo
 * `light_state`: the on/off state of the lights in each room.
 * `people_home`: The total number of people in the house.
 * `person_location`: The location of each person/the room each person is in.
-* `done_with_it`: The amount of time a person has been out of a room. Or, possibly, the location of the person who left this room.
+* `time_empty`: The amount of time a room has been empty.
 * `definitely_empty`: don't shut off lights if someone is coming right back.
 * `still_in_use`: (a variant of the one above) don't turn off the lights if an empty room might be reoccupied soon.
 
@@ -40,7 +40,7 @@ Any of these could be written into supporting concepts that would give informati
 
 In Inkling, concepts are declared using the `concept` keyword followed by the concept's name, input list and output type. For readability, a descriptive name is recommended.
 
-Every concept must include a curriculum, which tells the AI engine how to train the concept. These will be covered below.
+Every learned concept must include a curriculum, which tells the AI engine how to train the concept. These will be covered below.
 
 For more information on the concept statement, see the [Concept Reference][1].
 

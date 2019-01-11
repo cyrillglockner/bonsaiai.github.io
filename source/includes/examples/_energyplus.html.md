@@ -6,7 +6,7 @@
 
 In this example, we'll walk you through the statements that are part of a sample implementation of [EnergyPlus][2] on the Bonsai Platform. This is a real-world example of how to use the Bonsai Platform for HVAC control using BCVTB and EnergyPlus.
 
-While this BRAIN is training, the Bonsai AI Engine invokes the EnergyPlus simulator for every episode. The *energyplus_simulator.py* then drives the simulator forward a step at a time until it finishes the episode and then resets it for the next episode, driving the actions into it and sending state results back to the Bonsai AI Engine.
+While this BRAIN is training, the Bonsai AI Engine invokes the EnergyPlus simulator for every episode. The *energyplus_simulator.py* then drives the simulator forward a step at a time until it finishes the episode and then resets it for the next episode, driving the actions into it and sending states back to the Bonsai AI Engine.
 
 ## Inkling File
 
@@ -20,7 +20,7 @@ type SimState {
 }
 ```
 
-The `SimState` type describes the value returned from the Python simulation's `advance` method to the BRAIN. We have added constants to demonstrate how they can be optionally used. They can be used in all or none of the types you define.
+The `SimState` type describes the value returned from the Python simulation's `simulate` method to the BRAIN. We have added constants to demonstrate how they can be used in defining types.
 
 ```inkling2
 type SimAction {

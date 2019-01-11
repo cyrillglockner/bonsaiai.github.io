@@ -15,7 +15,7 @@ The `lesson` declares a lesson within a curriculum. Lessons provide control over
 
 ### Usage
 
-Multiple lessons can be used within a curriculum, and they are used at training time in the same order in which they're declared. The `constraint` clause should configure the simulator in a restricted manner. Subsequent lessons may incrementally reduce the restrictions, making the problem more difficult and the exploration space larger. A range constraint used within a lesson should be less restrictive (or at least not more restrictive) than the corresponding range constraint used in a previous lesson.
+Multiple lessons can be used within a curriculum, and they are used at training time in the same order in which they're declared. The `constraint` clause should configure the simulator in a restricted manner. Subsequent lessons should incrementally reduce the restrictions, making the problem more difficult and the exploration space larger. A range constraint used within a lesson should be less restrictive (or at least not more restrictive) than the corresponding range constraint used in a previous lesson.
 
 ### Example
 

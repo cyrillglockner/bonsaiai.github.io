@@ -31,8 +31,6 @@ There can be only one curriculum per concept, and every concept must have a curr
 
 Every curriculum must provide a `source` clause that specifies the data source for teaching the concept. Currently, only [simulators][3] are supported as data sources, so the `source` keyword must be followed by a simulator declaration or the name of a simulator declared at the global scope of the program.
 
-The `train` keyword indicates which concept this curriculum trains.
-
 ### Breakout Example
 
 > Breakout Example
@@ -58,7 +56,7 @@ type GameState {
   pixels: Image.Gray<84, 336>
 }
 
-graph (iput: GameState) {
+graph (input: GameState) {
   concept HighScore(input): PlayerMove {
     curriculum {
       source BreakoutSimulator
@@ -77,11 +75,11 @@ graph (iput: GameState) {
 }
 ```
 
-The configuration type `BreakoutConfig` is constrained in the lesson. When a concept is being trained, a new simulation configuration is passed to the simulator for each new episode. The configuration values are chosen in accordance with the current lesson's constraint. For example, in the lesson above, the `bricks_present` field is constrained to a value of 1, so the configuration passed to the simulator at the beginning of every episode will contain a value of 1 for this field. The `paddle_width` field is constrained to integers in the range of 1 through 4, so the configuration passed to the simulator at the beginning of each episode will contain a value of 1, 2, 3 or 4 for this field.
+The configuration type `BreakoutConfig` is constrained in the lesson. When a concept is being trained, a new simulation configuration is passed to the simulator for each new episode. The configuration values are chosen in accordance with the current lesson's constraint. For example, in the lesson above, the `bricks_percent` field is constrained to a value of 1, so the configuration passed to the simulator at the beginning of every episode will contain a value of 1 for this field. The `paddle_width` field is constrained to integers in the range of 1 through 4, so the configuration passed to the simulator at the beginning of each episode will contain a value of 1, 2, 3 or 4 for this field. Values are chosen uniformly at random from the set specified in the constraint.
 
 The `GameState` type describes the data that is passed as an input to the graph. This same data type is provided as an output from the simulator. For Breakout, this data includes a field called `pixels` which refers to an 84x336 grayscale image.
 
-The simulator return type must match (or be castable to) the graph's `input` type. For an explanation if castability, refer to [types][4].
+The simulator return type must match (or be castable to) the graph's `input` type. For an explanation of castability, refer to [types][4].
 
 In this example, the simulator declares the action type to be `PlayerMove`. The simulator action type must match the output type for the concept being trained. In our example, the concept `HighScore` trains the BRAIN to select the next move, which is of type `PlayerMove`. 
 
@@ -117,6 +115,6 @@ Another concept that helps with playing Breakout is `KeepPaddleUnderBall`. In th
 
 [1]: #lessons
 [2]: #concepts
-[2]: #simulators
+[3]: #simulators
 [4]: #types
 [5]: #constrained-types-and-range-expressions

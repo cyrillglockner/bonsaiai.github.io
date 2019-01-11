@@ -2,13 +2,14 @@
 
 Values in Inkling, including inputs and outputs of concepts, have defined types.
 
-The AI engine uses types to understand the data it is sent and how to represent the prediction it generates. Inkling is also a statically-typed language. Errors will be reported if values are not compatible with their expected type.
+The AI engine uses types to understand the data it is sent and how to represent the prediction it generates. Inkling is a statically-typed language. Errors will be reported if values are not compatible with their expected type.
 
 Inkling supports the following base types:
+
 * number - a scalar numeric value with double floating point precision and range
-* string - a string of zero or more Unicode characters
-* array - a fixed-length list of values each with the same type
 * structure - a list of fields, each with its own specified type and unique name
+* string (future) - a string of zero or more Unicode characters
+* array (future) - a fixed-length list of values each with the same type
 
 ## Type Declarations
 
@@ -21,9 +22,6 @@ type Dimension number
 # String type declaration
 type PortName string
 
-# Array type declaration
-type ArmAngles number[5]
-
 # Structure type declaration
 type Place {
   Name: string,
@@ -31,9 +29,8 @@ type Place {
   Latitude: number
 }
 
-# Structure and array types can refer to other types
+# Structure types can refer to other types
 type SensorState {
-  Destinations: Place[5],
   Height: Dimension,
   Width: Dimension
 }
@@ -58,7 +55,7 @@ Number types can be constrained using range constraints, which consist of a star
 # A real (floating-point) value from 0 to 5
 type TypeA number<0..5>
 
-# An integer value from 0 to 5
+# An integer value from 0 to 5, inclusive
 type TypeB number<0..5 step 1>
 
 # A number in the set {-1, -0.5, 0, 0.5, 1}
@@ -92,7 +89,7 @@ Inkling supports built-in names for signed and unsigned integers of various size
 
 ## Complex Types
 
-Inkling supports built-in types for complex objects that are commonly used as data inputs.
+Inkling supports built-in types for complex objects that are commonly used as data inputs. More details can be found under [Inkling Types][2].
 
 ```inkling2
 using Image

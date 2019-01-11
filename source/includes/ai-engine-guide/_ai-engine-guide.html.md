@@ -17,7 +17,7 @@ The Bonsai AI Engine keeps versions of BRAINs. Each BRAIN can contain multiple v
 
 # Architect
 
-The architect component is responsible for creating and optimizing learning topologies (e.g. neural networks) based on concept graphs. In essence, it takes the codified concept graph and pedagogy, and it proposes a set of candidate low level learning algorithms, topologies, and their configurations that it believes will best be able to learn the concepts in the model. This is akin to the work that the data scientist does in the toolkit approach, or that the search system automates in the statistical data analysis tools approach. Here, the system, is guided by the provided pedagogical program instead of being a broad search.
+The architect component is responsible for creating and optimizing learning topologies (e.g. neural networks) based on concept graphs. In essence, it takes the codified concept graph and pedagogy, and it proposes a set of candidate low level learning algorithms, topologies, and their configurations that it believes will best be able to learn the concepts in the model. This is akin to the work that the data scientist does in the toolkit approach, or that the search system automates in the statistical data analysis tools approach. Here the system is guided by the provided pedagogical program instead of being a broad search.
 
 In this section, we outline techniques used by the architect to determine reasonable architectures.
 

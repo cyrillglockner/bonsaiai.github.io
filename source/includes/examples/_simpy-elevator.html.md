@@ -41,7 +41,7 @@ The `Action` type defines the possible commands accepted by the elevator. In thi
 
 ```inkling2
 type ElevatorConfig {
-    episode_length: number
+    episode_length: Number.Int8
 }
 ```
 

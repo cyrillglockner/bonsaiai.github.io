@@ -183,12 +183,12 @@ void MySimulator::simulate(const bonsai::InklingMessage& action,
 | ---        | ---         |
 | `action`   | Input InklingMessage of action to be taken as defined in inkling. |
 | `state`    | Output InklingMessage. Should be populated with the current simulator state. |
-| `reward`   | Output reward value as calculated based upon the objective. |
+| `reward`   | Output calculated reward value. |
 | `terminal` | Output terminal state. Set to true if the simulator is in a terminal state. |
 
 This callback steps the simulation forward by a single step. It passes in
 the `action` to be taken, and expects the resulting `state`, `reward` for the current
-`objective`, and a `terminal` flag used to signal the end of an episode. Note that an
+`curriculum`, and a `terminal` flag used to signal the end of an episode. Note that an
 episode may be reset prematurely by the backend during training.
 
 Returning `true` for the `terminal` flag signals the start of a new episode.
@@ -242,7 +242,7 @@ When a new record file is set, the previous file will be closed immediately. Sub
 
 ## enable_keys(keys, prefix=None)
 
-This function adds the given keys to the log type for this writer.
+This function adds the given keys to the log schema for this writer.
 If one is provided, the prefix will be prepended to those keys and
 they will appear as such in the resulting logs.
 If recording is not enabled, this method has no effect.

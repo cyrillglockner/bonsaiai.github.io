@@ -7,7 +7,7 @@ To connect our simulation to a BRAIN in the Bonsai platform, we will need an Ink
 
 The problem description includes type definitions for the states the BRAIN will receive and the actions it will need to send. The description of how to teach the BRAIN includes the reward, as well as any decomposition of the problem into *concepts* and the sequencing of learning using *lessons*. This first tutorial will use a single concept and a single lesson.
 
-## Type
+## Types
 
 A [type][1] in Inkling describes the format and allowed ranges for a data value.
 
