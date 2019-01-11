@@ -45,7 +45,7 @@ Click the "Solution" tab of the code panel to see the answer to this exercise.
 
 ```inkling2--exercise
 type PlayerMove {
-    # EXERCISE: The field names and types must match the parameter to advance() in
+    # EXERCISE: The field names and types must match the parameter to step() in
     # our simulator. You need to specify the range and step size for the action.
     # <Your code goes here>
 }
@@ -53,7 +53,7 @@ type PlayerMove {
 
 ```inkling2--solution
 type PlayerMove {
-    # This field names and types must match the parameter to advance() in our
+    # This field names and types must match the parameter to step() in our
     # simulator. We specify the range and step size for the action.
     # A constraint {0,1.575,3.142, 4.712} would also work
     direction_radius: number<0 .. 6.283 step 1.575>  
