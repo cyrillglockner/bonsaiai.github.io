@@ -193,7 +193,7 @@ Use your preferred editor for creating a Dockerfile:
 
 You need to add all needed simulation files including bonsai related files into
 the docker container by using the “ADD” command. It’s advised to not add the
-.bonsai file as it includes your private access key that you may want to keep
+.bonsai file as it includes your private access key that you should keep
 secret.
 
 Create your Dockerfile and use additional ADD statements until all needed files
