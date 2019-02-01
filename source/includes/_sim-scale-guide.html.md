@@ -148,7 +148,7 @@ This step assumes you’re familiar with docker fundamentals. Please review
 <https://docs.docker.com/get-started/> if you have not used docker before.
 
 We’re using a command line interface for the next steps (“cmd” on Windows,
-“terminal.app” on macOS and your preferred  when using Linux).
+“terminal.app” on macOS and your preferred terminal app on Linux).
 
 ### Azure Sign-In
 >Login to ACR
