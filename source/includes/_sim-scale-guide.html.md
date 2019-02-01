@@ -305,7 +305,7 @@ to simplify managing parameters when creating tasks. Please copy and paste the
  content to the right into your editor and update \<your-sim-start>,\<bonsai_url>,
   \<bonsai_username>,\<bonsai_accesskey,\<your-sim-start>,\<your-acr>.
 
-Run the `az batch` command, it will create a task with the id:“simulation-task-1”.
+Run the `az batch` command, it will create a task with the id “simulation-task-1”.
 
 Create additional tasks by modifying the task.json file as needed.
 
