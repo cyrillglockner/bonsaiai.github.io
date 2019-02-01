@@ -161,7 +161,7 @@ az account set -subscription -s <Azure-SubId> 
 az acr login --resource-group <your-resource-group> --name <your-acr> 
 ```
 
-Use the Azure CLI for logging into your Azure Container Registry. You need your
+Use the Azure CLI to log into your Azure Container Registry. You need your
 Azure Subscription-ID, Azure Resource-Group and ACR-ID at this point.
 
 ```
