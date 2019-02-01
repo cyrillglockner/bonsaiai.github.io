@@ -140,7 +140,7 @@ Container settings: Custom
 Scale settings: 1 node
 
 For getting your workflow set up correctly, start with a single node and
-increase scale over time once you’ve validated that everything works fine.
+increase scale over time once you’ve validated that everything works.
 
 ## Create a docker for your Simulation
 
