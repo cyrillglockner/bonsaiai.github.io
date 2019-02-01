@@ -339,7 +339,7 @@ standard console output that you expect when running the docker container
 manually on your local machine.
 
 ## Clean-up
->Terminate all completed tasks
+>Terminate completed jobs
 
 ```
 az batch job set --job-id <you-job-id> --on-all-tasks-complete terminatejob
