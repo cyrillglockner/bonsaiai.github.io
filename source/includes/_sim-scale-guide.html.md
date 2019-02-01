@@ -54,7 +54,7 @@ deployments including Docker. This is the location where your packed docker
 container needs to reside, so tasks can access it as needed.
 
 ## Before you start
-Make sure the following pre-requisites are met before you start.
+Make sure you have the following pre-requisites before you start:
 
 -   Bonsai Platform account
 -   Bonsai CLI installed on your local machine
