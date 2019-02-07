@@ -11,7 +11,7 @@ as needed.
 Azure Batch creates and manages a pool of compute nodes (virtual machines),
 installs the applications you want to run, and schedules jobs to run on the
 nodes. There is no cluster or job scheduler software to install, manage, or
-scale. Instead, you use [Batch APIs andtools](https://docs.microsoft.com/en-us/azure/batch/batch-apis-tools), command-line scripts, or
+scale. Instead, you use [Batch APIs and tools](https://docs.microsoft.com/en-us/azure/batch/batch-apis-tools), command-line scripts, or
 the Azure portal to configure, manage, and monitor your jobs.
 
 ### What is a Pool?
@@ -45,9 +45,7 @@ example, we’re using a Linux based docker container to run a python-based
 simulation with the Bonsai platform but there is no reason it wouldn’t run with
 a Windows based docker container.
 
-### Azure Container Registry (ACR)
-
-https://azure.microsoft.com/en-us/services/container-registry/
+### [Azure Container Registry (ACR)](https://azure.microsoft.com/en-us/services/container-registry/)
 
 Azure Container Registry allows you to store images for all types of container
 deployments including Docker. This is the location where your packed docker
@@ -175,14 +173,14 @@ cd <~/your-simulation/>
 ```
 FROM ubuntu:16.04  
 
-ADD *\<first-file-in-your-simulation-directory\>* /simulation/*\<first-file\>*
+ADD /simulation/<first-file>
 
-ADD *\<second-file…\>*
+ADD <second-file…>
 
 RUN apt-get update && apt-get install -y --no-install-recommends && apt-get upgrade -y 
 RUN apt-get install python3 python3-pip -y --no-install-recommends 
 RUN pip3 install setuptools wheel 
-RUN pip3 install -r */\<path-to-requirements\>*/requirements.txt 
+RUN pip3 install -r /<path-to-requirements>/requirements.txt 
 ```
 
 Navigate to the simulation you want to use for training. If you don’t have one,
