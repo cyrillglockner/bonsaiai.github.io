@@ -142,13 +142,8 @@ Scale settings: Fixed, 1 node
 
 Max tasks per node: 1
 
-<<<<<<< HEAD
-We’re using a command line interface for the next steps (“cmd” on Windows,
-“terminal.app” on macOS and your preferred shell on Linux).
-=======
 For getting your workflow set up correctly, start with a "single node/single task"
  and increase scale over time once you’ve validated that everything works.
->>>>>>> aa73341e18111852a1ba55a48286336aa7966b0a
 
 ## Azure Sign-In
 >Login to ACR
@@ -160,6 +155,8 @@ az account set -subscription -s <Azure-SubId> 
 
 az acr login --resource-group <your-resource-group> --name <your-acr> 
 ```
+We’re using a command line interface for the next steps (“cmd” on Windows,
+“terminal.app” on macOS and your preferred shell on Linux).
 
 Use the Azure CLI to log into your Azure Container Registry. You need your
 Azure Subscription-ID, Azure Resource-Group and ACR-ID at this point.
@@ -168,9 +165,6 @@ Azure Subscription-ID, Azure Resource-Group and ACR-ID at this point.
 
 This step assumes you’re familiar with docker fundamentals. Please review
 <https://docs.docker.com/get-started/> if you have not used docker before.
-
-We’re using a command line interface for the next steps (“cmd” on Windows,
-“terminal.app” on macOS and your preferred shell on Linux).
 
 ###Create Docker Image
 > Navigate to your simulation directory
