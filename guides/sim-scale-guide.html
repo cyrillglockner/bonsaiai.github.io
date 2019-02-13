@@ -397,7 +397,7 @@ as needed.</p>
 <p>Azure Batch creates and manages a pool of compute nodes (virtual machines),
 installs the applications you want to run, and schedules jobs to run on the
 nodes. There is no cluster or job scheduler software to install, manage, or
-scale. Instead, you use <a href="https://docs.microsoft.com/en-us/azure/batch/batch-apis-tools">Batch APIs andtools</a>, command-line scripts, or
+scale. Instead, you use <a href="https://docs.microsoft.com/en-us/azure/batch/batch-apis-tools">Batch APIs and tools</a>, command-line scripts, or
 the Azure portal to configure, manage, and monitor your jobs.</p>
 
 <h3 id="what-is-a-pool">What is a Pool?</h3>
@@ -431,9 +431,7 @@ example, we’re using a Linux based docker container to run a python-based
 simulation with the Bonsai platform but there is no reason it wouldn’t run with
 a Windows based docker container.</p>
 
-<h3 id="azure-container-registry-acr">Azure Container Registry (ACR)</h3>
-
-<p>https://azure.microsoft.com/en-us/services/container-registry/</p>
+<h3 id="azure-container-registry-acr"><a href="https://azure.microsoft.com/en-us/services/container-registry/">Azure Container Registry (ACR)</a></h3>
 
 <p>Azure Container Registry allows you to store images for all types of container
 deployments including Docker. This is the location where your packed docker
@@ -456,9 +454,6 @@ and runs on Linux. All needed files should reside in one directory</li>
 </ul>
 
 <h2 id="your-worksheet">Your worksheet</h2>
-
-<p>Copy this table to a file and capture names and other information that you’ve
- picked during the process. You will need to use these at later steps.</p>
 <pre class="highlight plaintext"><code>| Item                      | Placeholder           | Your data           |
 | ------------------------- | --------------------- | ------------------- |
 | Azure-Subscription ID     | &lt;Azure-SubId&gt;         |                     |
@@ -474,6 +469,9 @@ and runs on Linux. All needed files should reside in one directory</li>
 | Bonsai BRAIN              | &lt;bonsai_brain_name&gt;   |                     |
 | Bonsai URL                | &lt;bonsai_url&gt;          | https://api.bons.ai |
 </code></pre>
+<p>Copy this table to a file and capture names and other information that you’ve
+ picked during the process. You will need to use these at later steps.</p>
+
 <h1 id="bonsai-example">Bonsai example</h1>
 
 <p>Step-by-step instructions for training a Bonsai BRAIN using a docker
@@ -523,22 +521,39 @@ the pool(s) every time.</p>
 
 <p>Sku: 16-04-lts (<em>specific to running Linux containers</em>) </p>
 
+<p>Node Size: Standard A1</p>
+
 <p>Container settings: Custom</p>
 
-<p>Scale settings: 1 node</p>
+<p>Scale settings: Fixed, 1 node</p>
 
-<p>For getting your workflow set up correctly, start with a single node and
-increase scale over time once you’ve validated that everything works.</p>
+<p>Max tasks per node: 1</p>
 
-<h2 id="create-a-docker-for-your-simulation">Create a docker for your Simulation</h2>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+We’re using a command line interface for the next steps (“cmd” on Windows,</p>
 
-<p>This step assumes you’re familiar with docker fundamentals. Please review
-<a href="https://docs.docker.com/get-started/">https://docs.docker.com/get-started/</a> if you have not used docker before.</p>
+<h1 id="terminal-app-on-macos-and-your-preferred-shell-on-linux">“terminal.app” on macOS and your preferred shell on Linux).</h1>
 
-<p>We’re using a command line interface for the next steps (“cmd” on Windows,
-“terminal.app” on macOS and your preferred shell on Linux).</p>
+<p>For getting your workflow set up correctly, start with a &ldquo;single node/single task&rdquo;
+ and increase scale over time once you’ve validated that everything works.</p>
 
-<h3 id="azure-sign-in">Azure Sign-In</h3>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>aa73341e18111852a1ba55a48286336aa7966b0a</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+
+<h2 id="azure-sign-in">Azure Sign-In</h2>
 
 <blockquote>
 <p>Login to ACR</p>
@@ -551,23 +566,42 @@ az acr login --resource-group &lt;your-resource-group&gt; --name &lt;your-acr&
 </code></pre>
 <p>Use the Azure CLI to log into your Azure Container Registry. You need your
 Azure Subscription-ID, Azure Resource-Group and ACR-ID at this point.</p>
-<pre class="highlight plaintext"><code>cd &lt;~/your-simulation/&gt;
-</code></pre>
+
+<h2 id="create-a-docker-for-your-simulation">Create a docker for your Simulation</h2>
+
+<p>This step assumes you’re familiar with docker fundamentals. Please review
+<a href="https://docs.docker.com/get-started/">https://docs.docker.com/get-started/</a> if you have not used docker before.</p>
+
+<p>We’re using a command line interface for the next steps (“cmd” on Windows,
+“terminal.app” on macOS and your preferred shell on Linux).</p>
+
 <h3 id="create-docker-image">Create Docker Image</h3>
 
+<blockquote>
+<p>Navigate to your simulation directory</p>
+</blockquote>
+<pre class="highlight plaintext"><code>cd &lt;~/your-simulation/&gt;
+</code></pre>
 <blockquote>
 <p>Copy and paste the following into your Dockerfile</p>
 </blockquote>
 <pre class="highlight plaintext"><code>FROM ubuntu:16.04  
 
-ADD *\&lt;first-file-in-your-simulation-directory\&gt;* /simulation/*\&lt;first-file\&gt;*
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+ADD /simulation/&lt;first-file&gt;
+=======
+# Set the working directory to /&lt;your-working-directory&gt;
+WORKDIR &lt;your-working-directory&gt;
 
-ADD *\&lt;second-file…\&gt;*
+ADD /&lt;first-file&gt; /&lt;your working directory&gt;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; aa73341e18111852a1ba55a48286336aa7966b0a
+
+ADD &lt;second-file…&gt;
 
 RUN apt-get update &amp;&amp; apt-get install -y --no-install-recommends &amp;&amp; apt-get upgrade -y 
 RUN apt-get install python3 python3-pip -y --no-install-recommends 
 RUN pip3 install setuptools wheel 
-RUN pip3 install -r */\&lt;path-to-requirements\&gt;*/requirements.txt 
+RUN pip3 install -r /&lt;path-to-requirements&gt;/requirements.txt 
 </code></pre>
 <p>Navigate to the simulation you want to use for training. If you don’t have one,
 there are a number of examples on the Bonsai <a href="https://github.com/BonsaiAI">github</a>.
@@ -586,16 +620,28 @@ are added. Point to the correct directories to match your local directory struct
 <p>Now go back to your command line interface and build the docker image.</p>
 
 <blockquote>
-<p>Build docker image and assign ID</p>
+<p>Build docker image and assign ID (macOS, Linux)</p>
 </blockquote>
 <pre class="highlight plaintext"><code>IMAGE_ID=$(docker build -q --no-cache --network=host . 2&gt;/dev/null | awk 'sha256:{print $NF}') 
 
 echo $IMAGE_ID 
 </code></pre>
 <blockquote>
-<p>Tag the image and assign a version</p>
+<p>Tag the image and assign a version (macOS, Linux)</p>
 </blockquote>
 <pre class="highlight plaintext"><code>docker tag $IMAGE_ID &lt;your-acr&gt;.azurecr.io/&lt;your-simulation&gt;:1.0
+</code></pre>
+<blockquote>
+<p>Build docker image and assign ID (Windows)</p>
+</blockquote>
+<pre class="highlight plaintext"><code>docker build -q --no-cache --network=host .
+
+docker images
+</code></pre>
+<blockquote>
+<p>Copy IMAGE ID from output and use with docker tag command (Windows)</p>
+</blockquote>
+<pre class="highlight plaintext"><code>docker tag &lt;IMAGE ID&gt; &lt;your-acr&gt;.azurecr.io/&lt;your-simulation&gt;:1.0
 </code></pre>
 <blockquote>
 <p>Push the image to ACR  </p>
@@ -617,7 +663,7 @@ docker run --rm -it &lt;your-acr&gt;.azurecr.io/&lt;your-simulation&gt;:1.0 pyth
 
 <p>This guide assumes you’re experienced with using the Bonsai platform using a
 local machine for running simulations. Please visit <a href="http://docs.bons.ai">http://docs.bons.ai</a> for
-further information</p>
+further information.</p>
 
 <p>At this point, your simulation model should run in the docker container and send
 the correct output to standard out.</p>
