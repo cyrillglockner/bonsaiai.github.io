@@ -354,10 +354,6 @@ node in your pool and enter the “files” section. If anything went wrong, err
 files should show up at this location and provide more details of the problem.
 This assumes that your locally executed container worked, and you’ve created a
 pool based on a single node.  
-On <http://beta.bons.ai> you will see standard out from one of the simulators
-when training is running and a simulator is connected. It should show the same
-standard console output that you expect when running the docker container
-manually on your local machine.
 
 ## Clean-up
 >Terminate completed jobs
